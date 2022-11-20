@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app1:
+    container_name: app1
+    image: myubuntu:2.0
+    build: .
+    depends_on: 
+      - database    
+    
+  app2: 
+    container_name: app2
+    image: hello-word
+    depends_on:
+      - database
+    
+  database: 
+    container_name: db
+    image: postgres
+    
+  
+    
